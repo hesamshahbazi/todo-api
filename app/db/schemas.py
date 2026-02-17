@@ -1,4 +1,10 @@
 from pydantic import BaseModel
+from typing import Optional
+
+
+class TaskUpdate(BaseModel):
+    title: Optional[str] = None
+    is_done: Optional[bool] = None
 
 class TaskCreate(BaseModel):
     title: str
