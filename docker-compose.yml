@@ -1,12 +1,9 @@
-
-
 services:
   api:
     build: .
-    container_name: todo-api
     ports:
-      - "8000:8000"
-    env_file:
-      - .env
+      - "${APP_PORT:-8000}:8000"
+    environment:
+      DATABASE_URL: sqlite:////data/todo.db
     volumes:
       - ./data:/data
