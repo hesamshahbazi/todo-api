@@ -1,7 +1,7 @@
 # 🚀 Todo API  
 ### FastAPI + SQLAlchemy + SQLite + Docker
 
-A production-ready CRUD REST API built with FastAPI.  
+An educational CRUD REST API built with FastAPI.  
 Fully Dockerized and structured with clean backend architecture.
 
 ---
@@ -135,7 +135,7 @@ curl -X POST http://localhost:8000/tasks \
 
 ```
 APP_PORT=8000
-DATABASE_URL=sqlite:///data/todo.db
+DATABASE_URL=sqlite:///./data/todo.db
 ```
 
 Note:
@@ -160,3 +160,9 @@ This project demonstrates:
 ## 👨‍💻 Author
 
 Hesam Shahbazi
+## Tests and scope
+
+Run `pip install -r requirements-dev.txt` then `python -m pytest -q`.
+Docker fixes its database path to `/data/todo.db` inside the mounted directory.
+Local startup creates the database directory if missing. This demo has no user
+authentication: all callers share the same task list. Do not expose it publicly as-is.
